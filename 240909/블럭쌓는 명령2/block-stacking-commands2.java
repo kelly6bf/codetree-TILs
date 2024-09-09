@@ -13,7 +13,7 @@ public class Main {
             int start = sc.nextInt();
             int end = sc.nextInt();
 
-            for (int j = start; j <= end; j++) {
+            for (int j = start - 1; j <= end - 1; j++) {
                 block[j] += 1;
                 result = Math.max(block[j], result);
             }
