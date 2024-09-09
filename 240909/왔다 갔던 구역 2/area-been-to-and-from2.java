@@ -18,7 +18,6 @@ public class Main {
                 line[current] += 1;
                 current += direction;
             }
-            current += direction;
         }
 
         int result = 0;
