@@ -6,7 +6,8 @@ public class Main {
 
         int n = sc.nextInt();
         int lineLength = (n * 20) + 1;
-        int[] line = new int[lineLength];
+        int[] rightFlow = new int[lineLength];
+        int[] leftFlow = new int[lineLength];
         int current = lineLength / 2;
 
         for (int i = 0; i < n; i++) {
@@ -15,14 +16,18 @@ public class Main {
             
             int direction = (command == 'L') ? -1 : 1;
             for (int j = 0; j < distance; j++) {
-                current += direction; // 먼저 이동한 다음에
-                line[current] += 1;
+                if (direction == 'L') {
+                    leftFlow[current] += 1;
+                } else {
+                    rightFlow[current] += 1;
+                }
+                current += direction;
             }
         }
 
         int result = 0;
-        for (int i = 0; i < line.length; i++) {
-            if (line[i] >= 2)
+        for (int i = 0; i < lineLength; i++) {
+            if (leftFlow[i] >= 2 || rightFlow[i] >= 2)
                 result++;
         }
 
