@@ -15,6 +15,18 @@ public class Main {
             int distance = sc.nextInt();
             char direction = sc.next().charAt(0);
 
+            // if (direction == 'R') {
+            //     startPoints[i] = current;
+            //     endPoints[i] = current + distance;
+            //     current += distance;
+            // } else {
+            //     startPoints[i] = current - distance;
+            //     endPoints[i] = current;
+            //     current -= direction;
+            // }
+            // startPoints[i] += offset;
+            // endPoints[i] += offset;
+
             if (direction == 'L') {
                 startPoints[i] = current - distance;
                 endPoints[i] = current;
@@ -24,9 +36,9 @@ public class Main {
                 endPoints[i] = current + distance;
                 current += distance;
             }
-
             startPoints[i] += offset;
             endPoints[i] += offset;
+
         }
 
         for (int i = 0; i < n; i++) {
@@ -36,8 +48,8 @@ public class Main {
         }
 
         int result = 0;
-        for (int i = 0; i <= 2000; i++) {
-            if (checked[i] >= 2)
+        for (int i : checked) {
+            if (i >= 2)
                 result++;
         }
 
