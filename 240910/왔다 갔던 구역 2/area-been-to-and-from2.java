@@ -27,8 +27,13 @@ public class Main {
 
         int result = 0;
         for (int i = 0; i < lineLength; i++) {
-            if (leftFlow[i] >= 2 || rightFlow[i] >= 2)
+            if (leftFlow[i] >= 2) {
                 result++;
+            }
+
+            if (rightFlow[i] >= 2) {
+                result++;
+            }
         }
 
         System.out.println(result);
