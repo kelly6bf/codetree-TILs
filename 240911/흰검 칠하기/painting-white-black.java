@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
 
     private static final int MAX_N = 1000;
-    private static final int MAX_X = 100;
+    private static final int MAX_X = 100;;
     private static final int OFFSET = MAX_N * MAX_X;
 
     private static final int WHITE_COUNT_INDEX = 0;
@@ -41,7 +41,7 @@ public class Main {
                     blocks[current + OFFSET][WHITE_COUNT_INDEX] += 1;
                 }
 
-                if (blocks[current + OFFSET][WHITE_COUNT_INDEX] == 2 && blocks[current + OFFSET][BLACK_COUNT_INDEX] == 2) {
+                if (blocks[current + OFFSET][WHITE_COUNT_INDEX] >= 2 && blocks[current + OFFSET][BLACK_COUNT_INDEX] >= 2) {
                     blocks[current + OFFSET][CURRENT_COLOR_INDEX] = GRAY;
                 }
             }
