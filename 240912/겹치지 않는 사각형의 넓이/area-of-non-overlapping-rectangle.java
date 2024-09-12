@@ -13,14 +13,14 @@ public class Main {
             int x2 = sc.nextInt();
             int y2 = sc.nextInt();
 
-            marking(arr, 1, x1, y1, x2, y2);
+            marking(arr, 1, offset, x1, y1, x2, y2);
         }
 
         int x1 = sc.nextInt();
         int y1 = sc.nextInt();
         int x2 = sc.nextInt();
         int y2 = sc.nextInt();
-        marking(arr, 2, x1, y1, x2, y2);
+        marking(arr, 2, offset, x1, y1, x2, y2);
 
         int result = 0;
         for (int[] i : arr) {
@@ -34,9 +34,9 @@ public class Main {
         System.out.println(result);
     }
 
-    private static void marking(int[][] arr, int m, int x1, int y1, int x2, int y2) {
-        for (int i = x1; i < x2; i++) {
-            for (int j = y1; j < y2; j++) {
+    private static void marking(int[][] arr, int m, int offset, int x1, int y1, int x2, int y2) {
+        for (int i = x1 + offset; i < x2 + offset; i++) {
+            for (int j = y1 + offset; j < y2 + offset; j++) {
                 arr[i][j] = m;
             }
         }
